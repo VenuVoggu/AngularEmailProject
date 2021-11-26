@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactComponent } from './contact/contact.component';
     SignInComponent,
     ForgotPasswordComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { ContactComponent } from './contact/contact.component';
       { path: 'ForgotPassword', component: ForgotPasswordComponent },
       { path: 'About', component: AboutComponent },
       { path: 'Contact', component: ContactComponent },
+      { path: 'MainPage', component: MainPageComponent },
     ])
 
   ],
