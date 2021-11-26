@@ -7,13 +7,19 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RouterModule } from '@angular/router';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ForgotPasswordComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -21,8 +27,11 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'login', component: SignInComponent },
-      { path: 'register', component: SignUpComponent },
+      { path: 'SignUp', component: SignInComponent },
+      { path: 'SignUp', component: SignUpComponent },
+      { path: 'ForgotPassword', component: ForgotPasswordComponent },
+      { path: 'About', component: AboutComponent },
+      { path: 'Contact', component: ContactComponent },
     ])
 
   ],
