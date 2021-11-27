@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ComposeComponent } from './compose/compose.component';
+import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +24,15 @@ import { ComposeComponent } from './compose/compose.component';
     AboutComponent,
     ContactComponent,
     MainPageComponent,
-    ComposeComponent
+    ComposeComponent,
+    ForgotEmailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent, pathMatch: 'full' },
       { path: 'SignUp', component: SignInComponent },
       { path: 'SignUp', component: SignUpComponent },
       { path: 'ForgotPassword', component: ForgotPasswordComponent },
@@ -38,6 +40,7 @@ import { ComposeComponent } from './compose/compose.component';
       { path: 'Contact', component: ContactComponent },
       { path: 'MainPage', component: MainPageComponent },
       { path: 'Compose', component: ComposeComponent },
+      { path: 'ForgotEmail', component: ForgotEmailComponent },
     ])
 
   ],

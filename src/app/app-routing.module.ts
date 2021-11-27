@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ComposeComponent } from './compose/compose.component';
+import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'Contact', component: ContactComponent },
   { path: 'MainPage', component: MainPageComponent },
   { path: 'Compose', component: ComposeComponent },
+  { path: 'ForgotEmail', component: ForgotEmailComponent },
 ];
 
 @NgModule({
