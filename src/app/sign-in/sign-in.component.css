@@ -87,7 +87,7 @@ body{
     
   }
   .box{
-    background-color:#212529;
+    background-color:#273b57;
     width:405px;
     height:500px;
     position:absolute;
@@ -140,3 +140,4 @@ body{
   .anchor:hover{
     color:white;
   }
+  

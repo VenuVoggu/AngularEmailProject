@@ -3,7 +3,7 @@
     border-spacing: 0;
     display: table;
     table-layout: fixed;
-    width: 100%;
+    width: 110%;
 }
 .mail-box aside {
     display: table-cell;
