@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ComposeComponent } from './compose/compose.component';
 import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
+import { DeleteAccountComponent } from './delete-account/delete-account.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
     ContactComponent,
     MainPageComponent,
     ComposeComponent,
-    ForgotEmailComponent
+    ForgotEmailComponent,
+    DeleteAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
       { path: 'MainPage', component: MainPageComponent },
       { path: 'Compose', component: ComposeComponent },
       { path: 'ForgotEmail', component: ForgotEmailComponent },
+      { path: 'DeleteAccount', component: DeleteAccountComponent },
     ])
 
   ],
