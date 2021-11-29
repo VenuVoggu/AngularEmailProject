@@ -10,7 +10,27 @@ export class SignInComponent implements OnInit {
 
   constructor() { }
 
+    email = "";
+
+    valid = {
+      email: true,
+    }
+
   ngOnInit(): void {
   }
+
+  validate(type: string): void {
+    const emailPattern = /\S+@\S+\.\S+/;
+    if (type === 'email') {
+      this.valid.email = emailPattern.test(this.email);
+    }
+  }
+
+  onkey(event: any, type: string) {
+    if (type === "email") {
+      this.email = event.target.value;
+    }this.validate(type)
+  }
+
 
 }

@@ -9,7 +9,9 @@
         </div>
         <div>
           <div class="place">
-            <input type="text" placeholder="PhoneNumber" name="uname" required><br/><br/>
+            <label style=color:red>*</label><label>PhoneNumber:</label>
+            <input type="text" placeholder="PhoneNumber" name="uname" (keyup)="onkey($event, 'phonenumber')"><br/><br/>
+            <p *ngIf="!valid.phonenumber" class="error-message">Incorrect phonenumber</p>
           </div> 
             <div class="lala"><a href="#">More options</a>
     <button type="button" class="edit_button" style="height :38;" routerLink="/SignIn">Submit</button>

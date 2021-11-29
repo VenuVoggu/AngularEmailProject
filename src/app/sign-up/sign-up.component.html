@@ -36,7 +36,7 @@
       <a>Already have an account?</a><a class="anchor" href="/SignIn" style="color:blue">SignIn</a>
     </form>
   </div> -->
-
+<form id="form">
   <div>
     <div class="bdf4dc">
       <div class="SSBsw">
@@ -48,12 +48,18 @@
         </div>
         <div>
           <div class="place">
-            <input class="place" type="text" placeholder="UserName" name="UserName" (keyup)="onkey($event, 'username')"><br/>
-            <input type="text" placeholder="PhoneNumber" name="PhoneNumber" (keyup)="onkey($event, 'phonenumber')"><br/>
-            <input type="text" placeholder="Create Email" name="Create Email" (keyup)="onkey($event, 'email')"><br/>
-            <input type="text" placeholder="Confirm Email" name="Confirm Email" (keyup)="onkey($event, 'confirmemail')"><br/>
-            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'password')"><br/>
-            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'confirmPassword')" >
+            <label style=color:red>*</label><label>UserName:</label>
+            <input type="text" placeholder="UserName" name="UserName" (keyup)="onkey($event, 'username')" required><br/>
+            <label style=color:red>*</label><label>PhoneNumber:</label>
+            <input type="text" placeholder="PhoneNumber" name="PhoneNumber" (keyup)="onkey($event, 'phonenumber')" required><br/>
+            <label style=color:red>*</label><label>Create Email:</label>
+            <input type="text" placeholder="Create Email" name="Create Email" (keyup)="onkey($event, 'email')" required><br/>
+            <label style=color:red>*</label><label>Confirm Email:</label>
+            <input type="text" placeholder="Confirm Email" name="Confirm Email" (keyup)="onkey($event, 'confirmemail')" required><br/>
+            <label style=color:red>*</label><label>Create Password:</label>
+            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'password')" required minlength="7"><br/>
+            <label style=color:red>*</label><label>Confirm Password:</label>
+            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'confirmPassword')" required>
 
             <p *ngIf="!valid.username" class="error-message">incorrect user name</p>
             <p *ngIf="!valid.password" class="error-message">incorrect password</p>
@@ -62,16 +68,15 @@
 
           </div>
           <div class="linka">
-            <!-- <a href="#">Forgot email?</a><br/>
-            <a href="/ForgotPassword">Forgot Password?</a> -->
             <a>Already have an account?</a><a  href="/SignIn" style="color:blue"> SignIn</a>
           </div>  
             <div class="lala"><a href="#">More options</a>
-    <button type="button" class="edit_button" style="height :38;" routerLink="/SignIn" >SignUp</button>
-</div>
-      </div>
+            <button type="button" class="edit_button" style="height :38;" routerLink="/SignIn" >SignUp</button>
+          </div>
         </div>
-    <footer class="main-footer">
+        
+      </div>
+      <footer class="main-footer">
       
         <a class="leftsa"href="#">English (United States)</a>
       
@@ -89,4 +94,5 @@
       </ul>
     </footer>
 </div>
+</form>
     

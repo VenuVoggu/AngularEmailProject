@@ -34,9 +34,17 @@
         </div>
         <div>
           <form class="Place">
-            <input type="text" placeholder="Email or phone" name="Email" required><br/><br/>
+            <label style=color:red>*</label><label>Email or phone:</label>
+            <input type="text" placeholder="Email or phone" name="Email" (keyup)="onkey($event, 'email')"><br/><br/>
+            <label style=color:red>*</label><label>Password:</label>
             <input type="text" placeholder="Password" name="Password" required>
+
+            <p *ngIf="!valid.email" class="error-message" >Your mail is incorrect</p>
           
+            <div class="linka">
+              <a>don't have an account?</a><a  href="/SignUp" style="color:blue"> SignUp</a>
+            </div>  
+
             <div class="linka">
               <a href="/ForgotEmail">Forgot email?</a>
             </div>  
