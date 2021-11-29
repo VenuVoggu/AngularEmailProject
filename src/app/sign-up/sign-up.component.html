@@ -48,20 +48,26 @@
         </div>
         <div>
           <div class="place">
-            <input type="text" placeholder="UserName" name="uname" required><br/>
-            <input type="text" placeholder="PhoneNumber" name="uname" required><br/>
-            <input type="text" placeholder="Create Email" name="uname" required><br/>
-            <input type="text" placeholder="Confirm Email" name="uname" required><br/>
-            <input type="text" placeholder="Create Password" name="uname" required><br/>
-            <input type="text" placeholder="Confirm Password" name="uname" required>
+            <input class="place" type="text" placeholder="UserName" name="UserName" (keyup)="onkey($event, 'username')"><br/>
+            <input type="text" placeholder="PhoneNumber" name="PhoneNumber" (keyup)="onkey($event, 'phonenumber')"><br/>
+            <input type="text" placeholder="Create Email" name="Create Email" (keyup)="onkey($event, 'email')"><br/>
+            <input type="text" placeholder="Confirm Email" name="Confirm Email" (keyup)="onkey($event, 'confirmemail')"><br/>
+            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'password')"><br/>
+            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'confirmPassword')" >
+
+            <p *ngIf="!valid.username" class="error-message">incorrect user name</p>
+            <p *ngIf="!valid.password" class="error-message">incorrect password</p>
+            <p *ngIf="!valid.email" class="error-message" >Your mail is incorrect</p>
+            <p *ngIf="!valid.phonenumber" class="error-message">Incorrect phonenumber</p>
+
           </div>
           <div class="linka">
             <!-- <a href="#">Forgot email?</a><br/>
             <a href="/ForgotPassword">Forgot Password?</a> -->
-            <a>Already have an account?</a><a  href="/SignIn" style="color:blue">SignIn</a>
+            <a>Already have an account?</a><a  href="/SignIn" style="color:blue"> SignIn</a>
           </div>  
             <div class="lala"><a href="#">More options</a>
-    <button type="button" class="edit_button" style="height :38;" (click)="Login()">SignUp</button>
+    <button type="button" class="edit_button" style="height :38;" routerLink="/SignIn" >SignUp</button>
 </div>
       </div>
         </div>

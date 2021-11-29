@@ -287,8 +287,13 @@ a{
 .place{
   margin-top: 80px;
   
-  
 }
+
+.place input:after { 
+  content:"*";
+  color: red;
+ }
+
 .buttons{
   font-size: 14px;
   white-space: normal;
@@ -389,4 +394,7 @@ input[type=text] {
 }
 li{
   display: inline-block;
+}
+.error-message{
+  color:red;
 }

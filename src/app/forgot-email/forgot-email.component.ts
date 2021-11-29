@@ -8,11 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ForgotEmailComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  SignIn(){
-    this.router.navigate(['SignIn']);
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

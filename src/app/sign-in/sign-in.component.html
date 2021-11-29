@@ -33,22 +33,23 @@
           <p class="FgbZLd">with your Google Account</p>
         </div>
         <div>
-          <div class="place">
-            <input type="text" placeholder="Email or phone" name="uname" required><br/><br/>
-            <input type="text" placeholder="Password" name="uname" required>
-          </div>
-          <div class="linka">
-            <a href="/ForgotEmail">Forgot email?</a>
-          </div>  
-          <div class="linka">
-            <a href="/ForgotPassword">Forgot Password?</a>
-            <a class="anchor" href="/DeleteAccount">Compose</a> 
-          </div>  
-            <div class="lala"><a href="#">More options</a>
-    <button type="button" class="edit_button" style="height :38;" (click)="MainPage()">SignIn</button>
-</div>
-      </div>
+          <form class="Place">
+            <input type="text" placeholder="Email or phone" name="Email" required><br/><br/>
+            <input type="text" placeholder="Password" name="Password" required>
+          
+            <div class="linka">
+              <a href="/ForgotEmail">Forgot email?</a>
+            </div>  
+            <div class="linka">
+              <a href="/ForgotPassword">Forgot Password?</a>
+              <!-- <a class="anchor" href="/DeleteAccount">Compose</a>  -->
+            </div>  
+              <div class="lala"><a href="#">More options</a>
+              <button type="button" class="edit_button" style="height :38;" routerLink="/MainPage">SignIn</button>
+            </div>
+          </form>    
         </div>
+      </div>
     <footer class="main-footer">
       
         <a class="leftsa"href="#">English (United States)</a>
