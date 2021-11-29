@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 //import { sign } from 'crypto';
 
@@ -83,5 +84,14 @@ export class SignUpComponent implements OnInit {
       this.phonenumber = event.target.value;
     } 
     this.validate(type)
+  }
+
+  Register() {
+    const formData = new FormData();
+    formData.append("UserName",this.username)
+    formData.append("Emailid",this.email)
+    formData.append("phnNo",this.phonenumber)
+    formData.append("CreatePassword",this.password)
+    
   }
 }
