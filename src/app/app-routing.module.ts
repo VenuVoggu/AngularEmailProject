@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'MainPage', component: MainPageComponent },
   { path: 'Compose', component: ComposeComponent },
   { path: 'ForgotEmail', component: ForgotEmailComponent },
+  { path: 'DeleteAccount', component: DeleteAccountComponent },
 ];
 
 @NgModule({

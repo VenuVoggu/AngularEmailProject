@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
+  ngOnInit(): void {
+  }
+  
+  
   constructor() { }
 
     username = "";
@@ -29,10 +33,10 @@ export class SignUpComponent implements OnInit {
     password: true,
     confirmPassword: true,
   }
+
   
 
-  ngOnInit(): void {
-  }
+  
   //validation part
   validate(type: string): void {
     const usernamePattern = /^[a-zA-Z]+$/
@@ -86,13 +90,17 @@ export class SignUpComponent implements OnInit {
     this.validate(type)
   }
 
-  Registerr() {
-    const formData = new FormData();
-    formData.append("UserName",this.username)
-    formData.append("Emailid",this.email)
-    formData.append("phnNo",this.phonenumber)
-    formData.append("CreatePassword",this.password)
+  // Registerr() {
+  //   const formData = new FormData();
+  //   formData.append("UserName",this.username)
+  //   formData.append("Emailid",this.email)
+  //   formData.append("phnNo",this.phonenumber)
+  //   formData.append("CreatePassword",this.password)
     
-    
-  }
+  //   console.log(this.registerObj)
+  //   this.api.Registerr(formData)
+  //     .subscribe(res => {
+  //       alert("success");
+  //     })
+  // }
 }
