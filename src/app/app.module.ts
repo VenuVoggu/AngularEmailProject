@@ -14,6 +14,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ComposeComponent } from './compose/compose.component';
 import { ForgotEmailComponent } from './forgot-email/forgot-email.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
+import { ApiService } from './shared/api.service';
 
 @NgModule({
   declarations: [
@@ -33,21 +34,22 @@ import { DeleteAccountComponent } from './delete-account/delete-account.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: 'home', component: HomeComponent, pathMatch: 'full' },
-      { path: 'SignUp', component: SignInComponent },
-      { path: 'SignUp', component: SignUpComponent },
-      { path: 'ForgotPassword', component: ForgotPasswordComponent },
-      { path: 'About', component: AboutComponent },
-      { path: 'Contact', component: ContactComponent },
-      { path: 'MainPage', component: MainPageComponent },
-      { path: 'Compose', component: ComposeComponent },
-      { path: 'ForgotEmail', component: ForgotEmailComponent },
-      { path: 'DeleteAccount', component: DeleteAccountComponent },
-    ])
+    RouterModule,
+    //forRoot([
+    //   { path: 'home', component: HomeComponent, pathMatch: 'full' },
+    //   { path: 'SignUp', component: SignInComponent },
+    //   { path: 'SignUp', component: SignUpComponent },
+    //   { path: 'ForgotPassword', component: ForgotPasswordComponent },
+    //   { path: 'About', component: AboutComponent },
+    //   { path: 'Contact', component: ContactComponent },
+    //   { path: 'MainPage', component: MainPageComponent },
+    //   { path: 'Compose', component: ComposeComponent },
+    //   { path: 'ForgotEmail', component: ForgotEmailComponent },
+    //   { path: 'DeleteAccount', component: DeleteAccountComponent },
+    // ])
 
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

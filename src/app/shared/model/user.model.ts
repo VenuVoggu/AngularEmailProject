@@ -1,8 +1,8 @@
-export class User {
+export class UserModel{
     UserName!:string;
     PhoneNumber!: string;
-    Email!:string;
+    CreateEmail!:string;
     ConfirmEmail!:string;
     CreatePassword!:string;
-    ConfirmPassword!:string;
+    ConfirmPassword!:string;   
 }

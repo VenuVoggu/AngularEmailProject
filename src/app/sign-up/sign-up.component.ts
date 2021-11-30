@@ -86,12 +86,13 @@ export class SignUpComponent implements OnInit {
     this.validate(type)
   }
 
-  Register() {
+  Registerr() {
     const formData = new FormData();
     formData.append("UserName",this.username)
     formData.append("Emailid",this.email)
     formData.append("phnNo",this.phonenumber)
     formData.append("CreatePassword",this.password)
+    
     
   }
 }
