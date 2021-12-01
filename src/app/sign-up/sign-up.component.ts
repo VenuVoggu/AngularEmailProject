@@ -42,21 +42,21 @@ export class SignUpComponent implements OnInit {
     const usernamePattern = /^[a-zA-Z]+$/
     const emailPattern = /\S+@\S+\.\S+/;
     const mobilePattern = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-    if (type === 'username') {
+    if (type === 'UserName') {
       if (this.data.UserName.length < 4 || this.data.UserName.length >= 10) {
         this.valid.UserName = false;
       } else {
         this.valid.UserName = usernamePattern.test(this.data.UserName);
       }
-    } else if (type === "phonenumber") {
+    } else if (type === "PhoneNumber") {
       if (this.data.PhoneNumber.length < 10 || this.data.PhoneNumber.length > 10) {
         this.valid.PhoneNumber = false
       } else {
         this.valid.PhoneNumber = mobilePattern.test(this.data.PhoneNumber)
       }
-    } else if (type === 'email') {
+    } else if (type === 'CreateEmail') {
        this.valid.CreateEmail = emailPattern.test(this.data.CreateEmail);
-    }else if (type === ('confirmemail' || 'email')) {
+    }else if (type === ('ConfirmEmail' || 'CreateEmail')) {
       // this.valid.email = emailPattern.test(this.email);
       if (this.data.CreateEmail === this.data.ConfirmEmail) {
         this.valid.CreateEmail = true;
@@ -102,9 +102,14 @@ export class SignUpComponent implements OnInit {
 
     
     console.log(this.registerObj)
-    this.api.Registerr(formData)
-      .subscribe(res => {
-        alert("success");
+    // this.api.Registerr(formData)
+    //   .subscribe(res => {
+    //     alert("success");
+    //   })
+
+      this.api.Registerr(formData).subscribe(result=>{ 
+        if(result)  this.router.navigate(['/SignIn'] ) , alert("successfully Registered");
+        else alert("Registration is failed")
       })
     // this.api.Registerr(formData).subscribe(result=>console.log(result))
 

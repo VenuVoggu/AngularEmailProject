@@ -16,7 +16,12 @@ export class ApiService {
     return this._http.post<any>(this.APIUrl + '/Registerr' ,empObj)
   }
 
-  login(body:any){
-    return this._http.post<any>(this.APIUrl+"/login",body)
+  EmailLogin(body:any){
+    return this._http.post<any>(this.APIUrl+"/EmailLogin",body)
+  }
+
+  SentMessages(empObj : any){
+    console.log("empobj.....",empObj);
+    return this._http.post<any>(this.APIUrl + '/SentMessages' ,empObj)
   }
 }

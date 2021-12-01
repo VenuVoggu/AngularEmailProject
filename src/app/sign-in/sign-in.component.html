@@ -35,11 +35,10 @@
         <div>
           <form class="Place">
             <label style=color:red>*</label><label>Email or phone:</label>
-            <input type="text" placeholder="Email or phone" name="Email" (keyup)="onkey($event, 'email')"><br/><br/>
+            <input type="text" placeholder="Email or phone" name="Email" (keyup)="onkey($event, 'CreateEmail')"><br/><br/>
+            <p *ngIf="!valid.CreateEmail" class="error-message" >Your mail is incorrect</p>
             <label style=color:red>*</label><label>Password:</label>
-            <input type="text" placeholder="Password" name="Password" required>
-
-            <p *ngIf="!valid.email" class="error-message" >Your mail is incorrect</p>
+            <input type="text" placeholder="Password" name="Password" (keyup)="onkey($event, 'ConfirmPassword')">
           
             <div class="linka">
               <a>don't have an account?</a><a  href="/SignUp" style="color:blue"> SignUp</a>
@@ -53,7 +52,7 @@
               <!-- <a class="anchor" href="/DeleteAccount">Compose</a>  -->
             </div>  
               <div class="lala"><a href="#">More options</a>
-              <button type="button" class="edit_button" style="height :38;" routerLink="/MainPage">SignIn</button>
+              <button type="button" class="edit_button" style="height :38;" (click)="EmailLogin()">SignIn</button>
             </div>
           </form>    
         </div>
