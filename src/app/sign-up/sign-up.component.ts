@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ApiService } from '../shared/api.service';
+import { UserModel } from '../shared/user.model';
 //import { sign } from 'crypto';
 
 @Component({
@@ -10,63 +12,62 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
-  ngOnInit(): void {
+  public data={
+    UserName : "",
+    PhoneNumber : "",
+    CreateEmail:"",
+    ConfirmEmail : "",
+    CreatePassword : "",
+    ConfirmPassword : "",
   }
-  
-  
-  constructor() { }
-
-    username = "";
-    email = "";
-    confirmemail="";
-    phonenumber = "";
-    password = "";
-    confirmPassword = "";
-    age = "";
   
   valid = {
-    username: true,
-    lastname: true,
-    email: true,
-    confirmemail: true,
-    phonenumber: true,
-    password: true,
-    confirmPassword: true,
+    UserName: true,
+    PhoneNumber: true,
+    Email: true,
+    CreateEmail: true,
+    ConfirmEmail: true,
+    CreatePassword: true,
+    ConfirmPassword: true,
   }
 
-  
+  public registerObj = new UserModel();
+  constructor(private http: HttpClient, private router: Router, private api: ApiService) { }
 
-  
+  ngOnInit(): void {
+  }
+
   //validation part
   validate(type: string): void {
     const usernamePattern = /^[a-zA-Z]+$/
     const emailPattern = /\S+@\S+\.\S+/;
     const mobilePattern = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
     if (type === 'username') {
-      if (this.username.length < 4 || this.username.length >= 10) {
-        this.valid.username = false;
+      if (this.data.UserName.length < 4 || this.data.UserName.length >= 10) {
+        this.valid.UserName = false;
       } else {
-        this.valid.username = usernamePattern.test(this.username);
+        this.valid.UserName = usernamePattern.test(this.data.UserName);
       }
     } else if (type === "phonenumber") {
-      if (this.phonenumber.length < 10 || this.phonenumber.length > 10) {
-        this.valid.phonenumber = false
+      if (this.data.PhoneNumber.length < 10 || this.data.PhoneNumber.length > 10) {
+        this.valid.PhoneNumber = false
       } else {
-        this.valid.phonenumber = mobilePattern.test(this.phonenumber)
+        this.valid.PhoneNumber = mobilePattern.test(this.data.PhoneNumber)
       }
-    } 
-    else if (type === ('confirmemail' || 'email')) {
+    } else if (type === 'email') {
+       this.valid.CreateEmail = emailPattern.test(this.data.CreateEmail);
+    }else if (type === ('confirmemail' || 'email')) {
       // this.valid.email = emailPattern.test(this.email);
-      if (this.email !== this.confirmemail) {
-        this.valid.email = false;
+      if (this.data.CreateEmail === this.data.ConfirmEmail) {
+        this.valid.CreateEmail = true;
       } else {
-        this.valid.email = true;
+        this.valid.CreateEmail = false;
       }
-    } else if (type === ('confirmPassword' || 'password')) {
-      if (this.password !== this.confirmPassword) {
-        this.valid.password = false;
+    } else if (type === ('ConfirmPassword' || 'CreatePassword')) {
+      if (this.data.CreatePassword !== this.data.ConfirmPassword) {
+        this.valid.CreatePassword = false;
       } else {
-        this.valid.password = true;
+        this.valid.CreatePassword = true;
       }
     }
   }
@@ -74,33 +75,38 @@ export class SignUpComponent implements OnInit {
 
   //onkey function which is used to connect to the html file
   onkey(event: any, type: string) {
-    if (type === 'username') {
-      this.username = event.target.value;
-    } else if (type === "email") {
-      this.email = event.target.value;
-    }else if (type==='confirmemail'){
-      this.confirmemail = event.target.value;
-    } else if (type === "password") {
-      this.password = event.target.value;
-    } else if (type === "confirmPassword") {
-      this.confirmPassword = event.target.value;
-    } else if (type === "phonenumber") {
-      this.phonenumber = event.target.value;
+    if (type === 'UserName') {
+      this.data.UserName = event.target.value;
+    } else if (type === "CreateEmail") {
+      this.data.CreateEmail = event.target.value;
+    }else if (type==='ConfirmEmail'){
+      this.data.ConfirmEmail = event.target.value;
+    } else if (type === "CreatePassword") {
+      this.data.CreatePassword = event.target.value;
+    } else if (type === "ConfirmPassword") {
+      this.data.ConfirmPassword = event.target.value;
+    } else if (type === "PhoneNumber") {
+      this.data.PhoneNumber = event.target.value;
     } 
     this.validate(type)
   }
 
-  // Registerr() {
-  //   const formData = new FormData();
-  //   formData.append("UserName",this.username)
-  //   formData.append("Emailid",this.email)
-  //   formData.append("phnNo",this.phonenumber)
-  //   formData.append("CreatePassword",this.password)
+  Registerr() {
+    const formData = new FormData();
+    formData.append("UserName",this.data.UserName)
+    formData.append("PhoneNumber",this.data.PhoneNumber)
+    formData.append("CreateEmail",this.data.CreateEmail)
+    formData.append("ConfirmEmail",this.data.ConfirmEmail)
+    formData.append("CreatePassword",this.data.CreatePassword)
+    formData.append("ConfirmPassword",this.data.ConfirmPassword)
+
     
-  //   console.log(this.registerObj)
-  //   this.api.Registerr(formData)
-  //     .subscribe(res => {
-  //       alert("success");
-  //     })
-  // }
+    console.log(this.registerObj)
+    this.api.Registerr(formData)
+      .subscribe(res => {
+        alert("success");
+      })
+    // this.api.Registerr(formData).subscribe(result=>console.log(result))
+
+  }
 }

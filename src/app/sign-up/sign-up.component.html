@@ -49,27 +49,34 @@
         <div>
           <div class="place">
             <label style=color:red>*</label><label>UserName:</label>
-            <input type="text" placeholder="UserName" name="UserName" (keyup)="onkey($event, 'username')" required><br/>
-            <p *ngIf="!valid.username" class="error-message">incorrect user name</p>
+            <input type="text" placeholder="UserName" name="UserName" (keyup)="onkey($event, 'UserName')" required><br/>
+            <p *ngIf="!valid.UserName" class="error-message">incorrect user name</p>
+
             <label style=color:red>*</label><label>PhoneNumber:</label>
-            <input type="text" placeholder="PhoneNumber" name="PhoneNumber" (keyup)="onkey($event, 'phonenumber')" required><br/>
-            <p *ngIf="!valid.phonenumber" class="error-message">Incorrect phonenumber</p>
+            <input type="text" placeholder="PhoneNumber" name="PhoneNumber" (keyup)="onkey($event, 'PhoneNumber')" required><br/>
+            <p *ngIf="!valid.PhoneNumber" class="error-message">Incorrect phonenumber</p>
+
             <label style=color:red>*</label><label>Create Email:</label>
-            <input type="text" placeholder="Create Email" name="Create Email" (keyup)="onkey($event, 'email')" required><br/>
+            <input type="text" placeholder="Create Email" name="Create Email" (keyup)="onkey($event, 'CreateEmail')"><br/>
+            <p *ngIf="!valid.CreateEmail" class="error-message">Your Email is incorrect</p>
+
             <label style=color:red>*</label><label>Confirm Email:</label>
-            <input type="text" placeholder="Confirm Email" name="Confirm Email" (keyup)="onkey($event, 'confirmemail')" required><br/>
-            <p *ngIf="!valid.email" class="error-message" >Your mail is incorrect</p>
+            <input type="text" placeholder="Confirm Email" name="Confirm Email" (keyup)="onkey($event, 'ConfirmEmail')" required><br/>
+            <p *ngIf="!valid.ConfirmEmail" class="error-message">Your Confirmmail is incorrect</p>
+
             <label style=color:red>*</label><label>Create Password:</label>
-            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'password')" required minlength="7"><br/>
+            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'CreatePassword')" required minlength="7"><br/>
+
             <label style=color:red>*</label><label>Confirm Password:</label>
-            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'confirmPassword')" required>
-            <p *ngIf="!valid.password" class="error-message">incorrect password</p>
+            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'ConfirmPassword')" required>
+            <p *ngIf="!valid.ConfirmPassword" class="error-message">incorrect password</p>
+            
           </div>
           <div class="linka">
             <a>Already have an account?</a><a  href="/SignIn" style="color:blue"> SignIn</a>
           </div>  
             <div class="lala"><a href="#">More options</a>
-            <button type="button"  class="edit_button" style="height :38;" routerLink="/SignIn" >SignUp</button>
+            <button type="button"  class="edit_button" style="height :38;" (click)="Registerr()" >SignUp</button>
           </div>
         </div>
         
