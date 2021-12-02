@@ -58,4 +58,6 @@ export class ComposeComponent implements OnInit {
     // this.api.Registerr(formData).subscribe(result=>console.log(result))
 
   }
+
+  
 }

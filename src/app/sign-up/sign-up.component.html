@@ -65,11 +65,12 @@
             <p *ngIf="!valid.ConfirmEmail" class="error-message">Your Confirmmail is incorrect</p>
 
             <label style=color:red>*</label><label>Create Password:</label>
-            <input type="text" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'CreatePassword')" required minlength="7"><br/>
+            <input type="password" placeholder="Create Password" name="Create Password" (keyup)="onkey($event, 'CreatePassword')" required minlength="7"><br/>
+            <!-- <p *ngIf="!valid.CreatePassword" class="error-message">incorrect password</p> -->
 
             <label style=color:red>*</label><label>Confirm Password:</label>
-            <input type="text" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'ConfirmPassword')" required>
-            <p *ngIf="!valid.ConfirmPassword" class="error-message">incorrect password</p>
+            <input type="password" placeholder="Confirm Password" name="Confirm Password" (keyup)="onkey($event, 'ConfirmPassword')" required>
+            <p *ngIf="!valid.CreatePassword" class="error-message">incorrect password</p>
             
           </div>
           <div class="linka">
